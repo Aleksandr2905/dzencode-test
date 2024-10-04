@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import io, { Socket } from 'socket.io-client';
+import { io as ClientIO } from 'socket.io-client';
 
 export default function Home() {
   const [activeUsers, setActiveUsers] = useState(0);
@@ -8,22 +8,30 @@ export default function Home() {
   const [socket, setSocket] = useState(null);
 
   useEffect(() => {
-    const socketInitializer = async () => {
-      await fetch('/api/socket');
-      const connection = io(
-        'https://dzencode-test-fe0258948483.herokuapp.com/'
-      );
+    // const socketInitializer = async () => {
+    //   await fetch('/api/socket');
+    //   const connection = io(
+    //     'https://dzencode-test-fe0258948483.herokuapp.com/'
+    //   );
 
-      connection.on('activeUsers', (count: number) => {
-        setActiveUsers(count);
-      });
-      setSocket(socket);
-      return () => {
-        connection.disconnect();
-      };
+    const connection = (ClientIO as any)(
+      'https://dzencode-test-fe0258948483.herokuapp.com/',
+      {
+        path: '/api/socket',
+        addTrailingSlash: false,
+      }
+    );
+
+    connection.on('activeUsers', (count: number) => {
+      setActiveUsers(count);
+    });
+    setSocket(socket);
+    return () => {
+      connection.disconnect();
     };
+    // };
 
-    socketInitializer();
+    // socketInitializer();
   }, [socket]);
 
   // const [activeUsers, setActiveUsers] = useState(0);
