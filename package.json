@@ -17,7 +17,9 @@
     "next": "14.2.13",
     "prettier": "^3.3.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "socket.io": "^4.8.0",
+    "socket.io-client": "^4.8.0"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",

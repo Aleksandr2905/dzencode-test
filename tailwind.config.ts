@@ -5,6 +5,7 @@ const config: Config = {
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/layout/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     screens: {
@@ -12,7 +13,10 @@ const config: Config = {
       xl: '1280px',
     },
     extend: {
-      colors: {},
+      colors: {
+        accent: '#71DB41',
+        hover: '#49A620',
+      },
       fontFamily: {
         inter: 'var(--font-inter), sans-serif',
       },
