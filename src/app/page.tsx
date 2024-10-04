@@ -4,6 +4,7 @@ import io, { Socket } from 'socket.io-client';
 
 export default function Home() {
   const [activeUsers, setActiveUsers] = useState(0);
+
   const [socket, setSocket] = useState(null);
 
   useEffect(() => {
