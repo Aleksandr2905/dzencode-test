@@ -10,7 +10,9 @@ export default function Home() {
   useEffect(() => {
     const socketInitializer = async () => {
       await fetch('/api/socket');
-      const connection = io();
+      const connection = io(
+        'https://dzencode-test-fe0258948483.herokuapp.com/'
+      );
 
       connection.on('activeUsers', (count: number) => {
         setActiveUsers(count);
