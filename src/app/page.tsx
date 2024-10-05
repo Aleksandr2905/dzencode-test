@@ -7,7 +7,9 @@ export default function Home() {
   // const [socket, setSocket] = useState<Socket | null>(null);
 
   useEffect(() => {
-    const connection = io('https://dzencode-backend.onrender.com');
+    const connection = io(
+      'https://dzencode-backend-436696ec47ba.herokuapp.com/'
+    );
 
     connection.on('activeUsers', (count: number) => {
       setActiveUsers(count);
