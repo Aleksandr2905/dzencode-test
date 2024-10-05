@@ -4,28 +4,21 @@ import io, { Socket } from 'socket.io-client';
 
 export default function Home() {
   const [activeUsers, setActiveUsers] = useState(0);
-
-  const [socket, setSocket] = useState(null);
+  const [socket, setSocket] = useState<Socket | null>(null);
 
   useEffect(() => {
-    // const socketInitializer = async () => {
-    //   await fetch('https://dzencode-backend.onrender.com', {
-    //     method: 'GET',
-    //     mode: 'no-cors',
-    //   });
     const connection = io('https://dzencode-backend.onrender.com');
 
     connection.on('activeUsers', (count: number) => {
       setActiveUsers(count);
     });
-    setSocket(socket);
+
+    setSocket(connection); // Исправили присваивание connection
+
     return () => {
       connection.disconnect();
     };
-    // };
-
-    // socketInitializer();
-  }, [socket]);
+  }, []); // Убрали [socket] зависимость
 
   // const [activeUsers, setActiveUsers] = useState(0);
 
