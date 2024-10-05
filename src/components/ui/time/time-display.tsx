@@ -38,10 +38,10 @@ import ClockIcon from '@/../public/assets/icons/clock.svg';
 
 export const TimeDisplay = () => {
   const [currentTime, setCurrentTime] = useState<Date>(new Date());
-  const hour = currentTime.toLocaleTimeString('ru-RU', {
-    hour: 'numeric',
-    minute: 'numeric',
-  });
+  // const hour = currentTime.toLocaleTimeString('ru-RU', {
+  //   hour: 'numeric',
+  //   minute: 'numeric',
+  // });
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentTime(new Date());
@@ -50,17 +50,21 @@ export const TimeDisplay = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-  // const formatTime = (date: Date) => {
-  //   return date.toLocaleTimeString('ru-RU', {
-  //     hour: '2-digit',
-  //     minute: '2-digit',
-  //   });
-  // };
+  const formatTime = (date: Date) => {
+    return date.toLocaleTimeString('ru-RU', {
+      hour: '2-digit',
+      minute: '2-digit',
+    });
+  };
+
+  const time = formatTime(currentTime);
 
   return (
     <div className="flex items-center gap-1">
       <ClockIcon width={18} height={18} />
-      <p className="font-inter text-base font-normal">{hour}</p>
+      <p className="font-inter text-base font-normal" suppressHydrationWarning>
+        {time}
+      </p>
     </div>
   );
 };
