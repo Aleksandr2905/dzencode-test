@@ -30,7 +30,7 @@ export const TimeDisplay = () => {
         <>
           <ClockIcon width={18} height={18} />
           <p
-            className="font-inter text-base font-normal"
+            className="font-inter text-base font-normal text-title"
             suppressHydrationWarning
           >
             {formatTime(currentTime)}

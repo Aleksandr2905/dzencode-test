@@ -11,7 +11,7 @@ export const ActiveSessions = () => {
       {activeSessions === 0 ? (
         <Loader />
       ) : (
-        <p className="font-inter text-base font-normal">
+        <p className="font-inter text-base font-normal text-title">
           Активных <br />
           сессий: <span className="">{activeSessions}</span>
         </p>

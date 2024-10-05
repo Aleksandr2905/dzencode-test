@@ -25,7 +25,7 @@ export const DateDisplay = () => {
   const { dayOfWeek, dateString } = formatDate(currentDate);
 
   return (
-    <p className="font-inter text-base font-normal">
+    <p className="font-inter text-base font-normal text-title">
       {dayOfWeek}
       <br />
       {dateString}

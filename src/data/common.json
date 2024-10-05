@@ -1,0 +1,6 @@
+{
+  "navigation": [
+    { "id": 1, "href": "/orders", "name": "Приходы" },
+    { "id": 2, "href": "/products", "name": "Продукты" }
+  ]
+}

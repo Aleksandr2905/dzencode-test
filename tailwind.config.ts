@@ -14,6 +14,8 @@ const config: Config = {
     },
     extend: {
       colors: {
+        title: '#2A3A42',
+        text_hover: '#3B8000',
         accent: '#71DB41',
         hover: '#49A620',
       },
