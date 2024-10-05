@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { io as ClientIO } from 'socket.io-client';
+import io, { Socket } from 'socket.io-client';
 
 export default function Home() {
   const [activeUsers, setActiveUsers] = useState(0);
@@ -8,22 +8,20 @@ export default function Home() {
   const [socket, setSocket] = useState(null);
 
   useEffect(() => {
-    // const socketInitializer = async () => {
-    //   await fetch('/api/socket');
-    const connection = (ClientIO as any)(
-      'https://dzencode-backend.onrender.com'
-    );
+    const socketInitializer = async () => {
+      await fetch('http://localhost:3000');
+      const connection = io();
 
-    connection.on('activeUsers', (count: number) => {
-      setActiveUsers(count);
-    });
-    setSocket(socket);
-    return () => {
-      connection.disconnect();
+      connection.on('activeUsers', (count: number) => {
+        setActiveUsers(count);
+      });
+      setSocket(socket);
+      return () => {
+        connection.disconnect();
+      };
     };
-    // };
 
-    // socketInitializer();
+    socketInitializer();
   }, [socket]);
 
   // const [activeUsers, setActiveUsers] = useState(0);
