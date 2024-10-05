@@ -42,13 +42,16 @@ export const TimeDisplay = () => {
   //   hour: 'numeric',
   //   minute: 'numeric',
   // });
+
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentTime(new Date());
     }, 1000);
 
     return () => clearInterval(intervalId);
-  }, []);
+  }, [currentTime]);
+
+  if (!currentTime) return null;
 
   const formatTime = (date: Date) => {
     return date.toLocaleTimeString('ru-RU', {
