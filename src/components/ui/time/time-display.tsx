@@ -37,21 +37,17 @@ import { useEffect, useState } from 'react';
 import ClockIcon from '@/../public/assets/icons/clock.svg';
 
 export const TimeDisplay = () => {
-  const [currentTime, setCurrentTime] = useState<Date>(new Date());
-  // const hour = currentTime.toLocaleTimeString('ru-RU', {
-  //   hour: 'numeric',
-  //   minute: 'numeric',
-  // });
+  const [currentTime, setCurrentTime] = useState<Date | null>(null);
 
   useEffect(() => {
+    setCurrentTime(new Date());
+
     const intervalId = setInterval(() => {
       setCurrentTime(new Date());
     }, 1000);
 
     return () => clearInterval(intervalId);
-  }, [currentTime]);
-
-  if (!currentTime) return null;
+  }, []);
 
   const formatTime = (date: Date) => {
     return date.toLocaleTimeString('ru-RU', {
@@ -60,13 +56,11 @@ export const TimeDisplay = () => {
     });
   };
 
-  const time = formatTime(currentTime);
-
   return (
     <div className="flex items-center gap-1">
       <ClockIcon width={18} height={18} />
       <p className="font-inter text-base font-normal" suppressHydrationWarning>
-        {time}
+        {currentTime ? formatTime(currentTime) : '...'}
       </p>
     </div>
   );
