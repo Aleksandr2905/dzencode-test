@@ -4,7 +4,23 @@ import io, { Socket } from 'socket.io-client';
 
 export default function Home() {
   const [activeUsers, setActiveUsers] = useState(0);
-  // const [socket, setSocket] = useState<Socket | null>(null);
+  const [socket, setSocket] = useState<Socket | null>(null);
+
+  // useEffect(() => {
+  //   const connection = io(
+  //     'https://dzencode-backend-436696ec47ba.herokuapp.com/'
+  //   );
+
+  //   connection.on('activeUsers', (count: number) => {
+  //     setActiveUsers(count);
+  //   });
+
+  //   // setSocket(connection); // Исправили присваивание connection
+
+  //   return () => {
+  //     connection.disconnect();
+  //   };
+  // }, []); // Убрали [socket] зависимость
 
   useEffect(() => {
     const connection = io(
@@ -15,33 +31,17 @@ export default function Home() {
       setActiveUsers(count);
     });
 
-    // setSocket(connection); // Исправили присваивание connection
+    setSocket(socket);
 
     return () => {
       connection.disconnect();
     };
-  }, []); // Убрали [socket] зависимость
-
-  // const [activeUsers, setActiveUsers] = useState(0);
-
-  // useEffect(() => {
-  //   const connection = io();
-
-  //   connection.on('activeUsers', (count: number) => {
-  //     setActiveUsers(count);
-  //   });
-
-  //   setSocket(socket);
-
-  //   return () => {
-  //     connection.disconnect();
-  //   };
-  // }, [socket]);
+  }, [socket]);
 
   return (
     <main>
       <h1>Hello word</h1>
-      <p>{activeUsers}</p>
+      <p suppressHydrationWarning>{activeUsers}</p>
     </main>
   );
 }
