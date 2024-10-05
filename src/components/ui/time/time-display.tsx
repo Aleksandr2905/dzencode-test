@@ -60,9 +60,7 @@ export const TimeDisplay = () => {
   return (
     <div className="flex items-center gap-1">
       <ClockIcon width={18} height={18} />
-      <p className="font-inter text-base font-normal" suppressHydrationWarning>
-        {hour}
-      </p>
+      <p className="font-inter text-base font-normal">{hour}</p>
     </div>
   );
 };
