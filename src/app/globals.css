@@ -26,6 +26,6 @@ body {
   }
 }
 
-.animation{
+.animation {
   @apply transition-all ease-linear duration-300;
 }
