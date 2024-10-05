@@ -4,7 +4,7 @@ import io, { Socket } from 'socket.io-client';
 
 export default function Home() {
   const [activeUsers, setActiveUsers] = useState(0);
-  const [socket, setSocket] = useState<Socket | null>(null);
+  // const [socket, setSocket] = useState<Socket | null>(null);
 
   useEffect(() => {
     const connection = io('https://dzencode-backend.onrender.com');
@@ -13,7 +13,7 @@ export default function Home() {
       setActiveUsers(count);
     });
 
-    setSocket(connection); // Исправили присваивание connection
+    // setSocket(connection); // Исправили присваивание connection
 
     return () => {
       connection.disconnect();
