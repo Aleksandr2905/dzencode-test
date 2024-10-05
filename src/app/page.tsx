@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import io, { Socket } from 'socket.io-client';
+import { io as ClientIO } from 'socket.io-client';
 
 export default function Home() {
   const [activeUsers, setActiveUsers] = useState(0);
@@ -10,7 +10,7 @@ export default function Home() {
   useEffect(() => {
     const socketInitializer = async () => {
       await fetch('http://localhost:3000');
-      const connection = io();
+      const connection = (ClientIO as any)();
 
       connection.on('activeUsers', (count: number) => {
         setActiveUsers(count);
