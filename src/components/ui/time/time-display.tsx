@@ -33,7 +33,7 @@ export const TimeDisplay = () => {
             className="font-inter text-base font-normal"
             suppressHydrationWarning
           >
-            {currentTime ? formatTime(currentTime) : <Loader />}
+            {formatTime(currentTime)}
           </p>
         </>
       ) : (
