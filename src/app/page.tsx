@@ -8,20 +8,23 @@ export default function Home() {
   const [socket, setSocket] = useState(null);
 
   useEffect(() => {
-    const socketInitializer = async () => {
-      await fetch('http://localhost:3000');
-      const connection = io();
+    // const socketInitializer = async () => {
+    //   await fetch('https://dzencode-backend.onrender.com', {
+    //     method: 'GET',
+    //     mode: 'no-cors',
+    //   });
+    const connection = io('https://dzencode-backend.onrender.com');
 
-      connection.on('activeUsers', (count: number) => {
-        setActiveUsers(count);
-      });
-      setSocket(socket);
-      return () => {
-        connection.disconnect();
-      };
+    connection.on('activeUsers', (count: number) => {
+      setActiveUsers(count);
+    });
+    setSocket(socket);
+    return () => {
+      connection.disconnect();
     };
+    // };
 
-    socketInitializer();
+    // socketInitializer();
   }, [socket]);
 
   // const [activeUsers, setActiveUsers] = useState(0);
