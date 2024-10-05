@@ -1,6 +1,6 @@
 // import { DateDisplay } from '@/components/ui/date';
 import { Logo } from '@/components/ui/logo';
-// import { TimeDisplay } from '@/components/ui/time';
+import { TimeDisplay } from '@/components/ui/time';
 
 export const Header = () => {
   return (
@@ -9,7 +9,7 @@ export const Header = () => {
         <Logo />
         <div className="flex flex-row gap-5 items-end">
           {/* <DateDisplay /> */}
-          {/* <TimeDisplay /> */}
+          <TimeDisplay />
         </div>
       </div>
     </header>
