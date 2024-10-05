@@ -41,7 +41,7 @@ export default function Home() {
   return (
     <main>
       <h1>Hello word</h1>
-      <p suppressHydrationWarning>{activeUsers}</p>
+      <p>{activeUsers}</p>
     </main>
   );
 }

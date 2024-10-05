@@ -1,3 +1,5 @@
+'use client';
+
 import { months } from '@/utils';
 
 export const DateDisplay = () => {
@@ -25,7 +27,7 @@ export const DateDisplay = () => {
   const { dayOfWeek, dateString } = formatDate(currentDate);
 
   return (
-    <p className="font-inter text-base font-normal" suppressHydrationWarning>
+    <p className="font-inter text-base font-normal">
       {dayOfWeek}
       <br />
       {dateString}
