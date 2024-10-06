@@ -5,7 +5,7 @@ import { TimeDisplay } from '@/components/ui/time';
 
 export const Header = () => {
   return (
-    <header className="shadow-lg shadow-gray-100">
+    <header className="shadow-lg shadow-gray-100 relative z-10 bg-white">
       <div className="container flex justify-between py-6">
         <Logo />
         <div className="flex flex-row gap-7 items-end">

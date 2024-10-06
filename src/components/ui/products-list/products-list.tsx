@@ -16,7 +16,7 @@ export const ProductsList = () => {
     : products;
 
   return (
-    <>
+    <div className="ml-[17%]">
       <div className="flex justify-between">
         <h2 className="text-2xl font-medium text-title">
           Продукты / {filteredProducts.length}
@@ -49,6 +49,6 @@ export const ProductsList = () => {
           <Product key={product.id} product={product} />
         ))}
       </ul>
-    </>
+    </div>
   );
 };
