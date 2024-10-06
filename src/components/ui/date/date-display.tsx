@@ -1,7 +1,14 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import { months } from '@/utils';
 
 export const DateDisplay = () => {
-  const currentDate = new Date();
+  const [currentDate, setCurrentDate] = useState<Date | null>(null);
+
+  useEffect(() => {
+    setCurrentDate(new Date());
+  }, []);
 
   const formatDate = (
     date: Date
@@ -21,6 +28,8 @@ export const DateDisplay = () => {
       dateString: `${formattedDayOfMonth} ${month}, ${year}`,
     };
   };
+
+  if (!currentDate) return null;
 
   const { dayOfWeek, dateString } = formatDate(currentDate);
 
