@@ -36,12 +36,12 @@ export const DateDisplay = () => {
 
   const { dayOfWeek, dateString } = formatDate(currentDate);
 
+  const style = 'font-inter text-base font-normal text-title';
+
   return (
     <div className="flex flex-col">
-      <p className="font-inter text-base font-normal text-title">{dayOfWeek}</p>
-      <p className="font-inter text-base font-normal text-title">
-        {dateString}
-      </p>
+      <p className={style}>{dayOfWeek}</p>
+      <p className={style}>{dateString}</p>
     </div>
   );
 };
