@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { Loader } from '@/components/common/loader';
 import { months } from '@/utils';
 
 export const DateDisplay = () => {
@@ -29,15 +30,18 @@ export const DateDisplay = () => {
     };
   };
 
-  if (!currentDate) return null;
+  if (!currentDate) {
+    return <Loader />;
+  }
 
   const { dayOfWeek, dateString } = formatDate(currentDate);
 
   return (
-    <p className="font-inter text-base font-normal text-title">
-      {dayOfWeek}
-      <br />
-      {dateString}
-    </p>
+    <div className="flex flex-col">
+      <p className="font-inter text-base font-normal text-title">{dayOfWeek}</p>
+      <p className="font-inter text-base font-normal text-title">
+        {dateString}
+      </p>
+    </div>
   );
 };
