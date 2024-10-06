@@ -9,7 +9,7 @@ interface ProductType {
   type: string;
   guarantee: Guarantee;
   price: Price[];
-  order: number;
+  order: string;
 }
 
 export interface ProductProps {
