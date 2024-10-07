@@ -26,7 +26,6 @@ export const orders = [
       return products.filter((product) => product.order === this.title);
     },
   },
-  ,
   {
     id: 4,
     title: 'ПН-10004',
@@ -36,9 +35,8 @@ export const orders = [
       return products.filter((product) => product.order === this.title);
     },
   },
-  ,
   {
-    id: 3,
+    id: 5,
     title: 'ПН-10005',
     date: '2024-10-03 12:09:33',
     description: 'desc',
@@ -160,7 +158,7 @@ export const products = [
       { value: 1800, symbol: 'USD', isDefault: 0 },
       { value: 49500, symbol: 'UAH', isDefault: 1 },
     ],
-    order: 'ПН-10006',
+    order: 'ПН-10001',
     date: '2023-06-05 09:30:00',
   },
   {
@@ -179,7 +177,7 @@ export const products = [
       { value: 350, symbol: 'USD', isDefault: 0 },
       { value: 9600, symbol: 'UAH', isDefault: 1 },
     ],
-    order: 'ПН-10007',
+    order: 'ПН-10002',
     date: '2023-07-12 13:00:00',
   },
   {
@@ -198,7 +196,7 @@ export const products = [
       { value: 900, symbol: 'USD', isDefault: 0 },
       { value: 24700, symbol: 'UAH', isDefault: 1 },
     ],
-    order: 'ПН-10008',
+    order: 'ПН-10003',
     date: '2023-08-15 16:00:00',
   },
   {
@@ -217,7 +215,7 @@ export const products = [
       { value: 200, symbol: 'USD', isDefault: 0 },
       { value: 5500, symbol: 'UAH', isDefault: 1 },
     ],
-    order: 'ПН-10009',
+    order: 'ПН-10004',
     date: '2022-03-22 11:00:00',
   },
   {
@@ -236,7 +234,7 @@ export const products = [
       { value: 150, symbol: 'USD', isDefault: 0 },
       { value: 4100, symbol: 'UAH', isDefault: 1 },
     ],
-    order: 'ПН-10010',
+    order: 'ПН-10005',
     date: '2023-09-01 08:45:00',
   },
 ];

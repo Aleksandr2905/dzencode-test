@@ -16,6 +16,7 @@
     "@headlessui/react": "^2.1.9",
     "clsx": "^2.1.1",
     "next": "14.2.13",
+    "numeralize-ru": "^2.0.0",
     "prettier": "^3.3.3",
     "react": "^18",
     "react-dom": "^18",

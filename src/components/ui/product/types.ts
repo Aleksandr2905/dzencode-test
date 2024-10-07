@@ -1,9 +1,9 @@
-interface Guarantee {
+export interface Guarantee {
   start: string;
   end: string;
 }
 
-interface ProductType {
+export interface ProductType {
   photo: string;
   title: string;
   type: string;

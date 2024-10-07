@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { products } from '../../../../api';
-import { Product } from '../product/product';
+import { Product } from '../product';
 
 export const ProductsList = () => {
   const [selectedType, setSelectedType] = useState<string>('');
