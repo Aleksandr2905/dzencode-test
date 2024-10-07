@@ -1,12 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import { orders } from '../../../../api';
+import { orders as initialOrders } from '../../../../api';
 import { Order } from '../order';
 import { OrderDetails } from '../order-details';
 
 export const OrderList = () => {
   const [showOrder, setShowOrder] = useState<number | null>(null);
+  const [orders, setOrders] = useState(initialOrders);
 
   const handleSelectOrder = (orderId: number) => {
     setShowOrder(orderId);
@@ -14,6 +15,12 @@ export const OrderList = () => {
 
   const handleCloseOrderDetails = () => {
     setShowOrder(null);
+  };
+
+  const handleDeleteOrder = (orderId: number) => {
+    setOrders((prevOrders) =>
+      prevOrders.filter((order) => order.id !== orderId)
+    );
   };
 
   return (
@@ -31,6 +38,7 @@ export const OrderList = () => {
                 onClick={() => handleSelectOrder(order.id)}
                 isSelected={order.id === showOrder}
                 isHidden={showOrder !== null}
+                onDelete={() => handleDeleteOrder(order.id)}
               />
             ))}
           </ul>

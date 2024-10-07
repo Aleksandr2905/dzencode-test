@@ -23,4 +23,5 @@ export type OrderProps = {
   onClick: () => void;
   isSelected: boolean;
   isHidden: boolean;
+  onDelete: () => void;
 };
