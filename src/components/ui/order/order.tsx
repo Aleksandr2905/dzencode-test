@@ -8,7 +8,7 @@ import ArrowIcon from '@/../public/assets/icons/arrow.svg';
 import { formatDate } from '@/utils';
 import { sumPrices } from '@/utils/sum-prices';
 import { OrderProps } from './types';
-import { DeletePopup } from '@/components/delete-popup';
+import { DeletePopup } from '@/components/ui/delete-popup';
 
 export const Order = ({
   order,
