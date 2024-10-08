@@ -14,6 +14,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'Inventory',
   description: '',
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
